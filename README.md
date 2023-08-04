@@ -1,3 +1,14 @@
+
+
+
+
+
+# React Quote App
+
+This is simple Quote App built with react, tailwind and mantine.
+
+![Quote App](./src/assets/preview.png)
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
