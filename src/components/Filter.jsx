@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import { AppContext } from '../context/AppContext';
 import { NativeSelect } from '@mantine/core';
 
 function Filter(props){
+
+    const context = useContext(AppContext);
+    console.log(context)
+
     return (
         <div>
             <NativeSelect

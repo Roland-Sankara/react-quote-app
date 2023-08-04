@@ -1,6 +1,8 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
+import {AppContext} from "./context/AppContext";
 import Filter from "./components/Filter";
 import QuoteCard from "./components/QuoteCard";
+import ThemeSwitch from './components/ThemeSwitch';
 
 let quotes = [
   {id: "1", text: "Genius is one percent inspiration and ninety-nine percent perspiration.", author: "Thomas", category: "motivation"},
@@ -15,7 +17,7 @@ let quotes = [
 
 function App(){
   const [author, setAuthor] = useState("Thomas");
-
+  const context = useContext(AppContext)
 
   function authorFilter(event){
     let inputValue = event.target.value;
@@ -29,7 +31,10 @@ function App(){
 
   return (
     <div className="w-1/2 m-auto">
-      <h1 className="text-center text-4xl pt-16 font-bold">Quotes App</h1>
+      <div>
+        <h1 className="text-center text-4xl pt-16 font-bold pb-4">Quotes App</h1>
+        <ThemeSwitch/>
+      </div>
 
       <div className="flex gap-4 pt-16">
         <Filter 
@@ -44,7 +49,7 @@ function App(){
         />
       </div>
 
-      <div className="flex flex-wrap gap-4 py-16">
+      <div className={`flex flex-wrap justify-center mt-4 gap-4 py-16 ${context.theme == "light" ? "bg-white text-black" : "bg-black text-white"}`}>
         {
           quoteFilter(author).map((quote)=>{
             return  <QuoteCard key={quote.id} text={quote.text} author={quote.author}/>

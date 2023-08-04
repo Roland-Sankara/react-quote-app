@@ -7,7 +7,7 @@
 
 This is simple Quote App built with react, tailwind and mantine.
 
-![Quote App](./src/assets/preview.png)
+![Quote App](./src/assets/preview-2.png)
 
 # React + Vite
 
